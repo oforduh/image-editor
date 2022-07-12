@@ -160,6 +160,12 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  body {
+    overflow: scroll;
+  }
+  .container {
+    width: 95%;
+  }
   .wrapper .preview-img {
     margin-left: unset;
     margin-bottom: 30px;
@@ -183,6 +189,12 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  body {
+    overflow: scroll;
+  }
+  .container {
+    width: 95%;
+  }
   .wrapper .preview-img {
     margin-left: unset;
     margin-bottom: 30px;
