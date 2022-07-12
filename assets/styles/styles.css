@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Ruda:wght@400;500;700;900&display=swap");
+
+:root {
+  --bgColor: #e3f2fd;
+  --white: #fff;
+  --borderColor: #ccc;
+  --buttonTextColor: #6c757d;
+  --activeBg: #5372f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bgColor);
+  /* border: 3px solid red; */
+}
+.container {
+  min-height: 70%;
+  /* border: 3px solid red; */
+  width: 70%;
+  background-color: var(--white);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 35px 35px;
+}
+/*  disable other buttons until a user selects an image*/
+.container.disable :where(.editor-panel, .reset-filter, .save-img) {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.container h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.container .wrapper {
+  /* border: 2px solid red; */
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+.wrapper .editor-panel {
+  border: 1px solid var(--borderColor);
+  width: 40%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  /* border: 3px solid red; */
+}
+
+.editor-panel .title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.editor-panel .options,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  /* font-size: 16px; */
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+
+.editor-panel button {
+  /* border: 2px solid red; */
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+.editor-panel .filter button {
+  width: calc(100% / 2 - 4px);
+  margin-bottom: 8px;
+  color: var(--buttonTextColor);
+  cursor: pointer;
+  background: var(--white);
+  border: 1px solid var(--buttonTextColor);
+}
+
+.filter button.active {
+  color: var(--white);
+  background: var(--activeBg) !important;
+  border-color: var(--activeBg);
+  /* border: 3px solid red; */
+}
+.editor-panel button:hover {
+  /* border: 2px solid red; */
+  background: #f5f5f5;
+}
+.editor-panel .rotate button {
+  width: calc(100% / 4 - 8px);
+}
+.rotate button:nth-child(3),
+.rotate button:nth-child(4) {
+  font-size: 18px;
+}
+
+.filter .slider {
+  /* border: 2px solid red; */
+  margin-top: 20px;
+}
+
+.filter .slider input {
+  height: 5px;
+  width: 100%;
+  border: 2px solid red;
+}
+
+.filter .slider .filter-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #464646;
+  font-size: 14px;
+  /* border: 2px solid red; */
+}
+
+.wrapper .preview-img {
+  /* border: 2px solid green; */
+  width: 60%;
+  margin-left: 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preview-img img {
+  width: 100%;
+  height: 100%;
+}
+.controls button {
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #fff;
+}
+.controls .reset-filter {
+  color: var(--buttonTextColor);
+  border: 1px solid var(--buttonTextColor);
+}
+
+.controls .choose-img {
+  background: var(--buttonTextColor);
+  border: 1px solid var(--buttonTextColor);
+  color: var(--white);
+}
+
+.controls .save-img {
+  background: var(--activeBg);
+  border: 1px solid var(--activeBg);
+  color: var(--white);
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper .preview-img {
+    margin-left: unset;
+    margin-bottom: 30px;
+  }
+  .container {
+    padding: 25px;
+  }
+
+  .container .wrapper {
+    flex-wrap: wrap-reverse;
+  }
+
+  .wrapper .editor-panel {
+    width: 100%;
+  }
+
+  .wrapper .preview-image {
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper .preview-img {
+    margin-left: unset;
+    margin-bottom: 30px;
+  }
+  .controls button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .controls .row {
+    width: 100%;
+  }
+
+  .controls .row .save-img {
+    margin-left: 0px;
+  }
+}
